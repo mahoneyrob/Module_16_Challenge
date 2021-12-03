@@ -54,7 +54,8 @@ SELECT *
    AND vine = 'N';
 
 -- Step 5
-  SELECT vine, COUNT(*) AS total_reviews, 
+  SELECT vine, 
+         COUNT(*) AS total_reviews, 
          COUNT(CASE WHEN star_rating = 5 THEN 1 END) AS five_star_reviews,
 	 ROUND(100 * COUNT(CASE WHEN star_rating = 5 THEN 1 END) / CAST(COUNT(*) AS NUMERIC), 2) AS percent_five_star
     FROM vine_table
